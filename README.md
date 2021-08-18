@@ -30,7 +30,7 @@ const vm = Vue.createApp({
 - 新增 `setup`、`ref` 等語法糖，開發時的體驗更好
 
 ## data 的部份強制使用 function 回傳
-## 三次法則: (https://book.vue.tw/CH1/1-3-computed-and-methods.html#methods-%E6%96%B9%E6%B3%95)[https://book.vue.tw/CH1/1-3-computed-and-methods.html#methods-%E6%96%B9%E6%B3%95]
+## (三次法則)[https://book.vue.tw/CH1/1-3-computed-and-methods.html#methods-%E6%96%B9%E6%B3%95]
 ## Computed 有變數異動的偵測，還有變數計算後的暫存
 ```html
 <template>
