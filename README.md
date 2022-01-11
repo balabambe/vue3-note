@@ -156,6 +156,45 @@ props: {
 }
 ```
 
+## Props in setup
+```javascript
+// MyBook.vue
+
+export default {
+  props: {
+    title: String
+  },
+  setup(props) {
+    console.log(props.title)
+  }
+}
+```
+注意：props 不建議使用 es6 解構方式取出要的參數，因為 props 的內容會變動，如果有需要用解構，請使用 `toRefs`
+
+```javascript
+// MyBook.vue
+
+import { toRefs } from 'vue'
+
+setup(props) {
+  const { title } = toRefs(props)
+
+  console.log(title.value)
+}
+```
+若 `title` 有可能不存在(Optional)，則請使用 `toRef` (少了一個s)
+```javascript
+// MyBook.vue
+
+import { toRef } from 'vue'
+
+setup(props) {
+  const title = toRef(props, 'title')
+
+  console.log(title.value)
+}
+```
+
 ## 遞迴 Component (用在樹狀選單)
 [看這裡](https://book.vue.tw/CH2/2-2-communications.html#props-%E8%88%87%E9%81%9E%E8%BF%B4%E5%85%83%E4%BB%B6)
 
