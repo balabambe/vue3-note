@@ -169,7 +169,7 @@ export default {
   }
 }
 ```
-注意：props 不建議使用 es6 解構方式取出要的參數，因為 props 的內容會變動，如果有需要用解構，請使用 `toRefs`
+注意：props 不建議使用 es6 解構方式取出要的參數，因為 props 的內容是變動的(reactive)，如果使用了解構，props 的 reactive 會解除，如果有需要用解構，請使用 `toRefs`
 
 ```javascript
 // MyBook.vue
@@ -182,7 +182,7 @@ setup(props) {
   console.log(title.value)
 }
 ```
-若 `title` 有可能不存在(Optional)，則請使用 `toRef` (少了一個s)
+若 `title` 有可能不存在(Optional)，則請使用 `toRef` (少一個s)
 ```javascript
 // MyBook.vue
 
