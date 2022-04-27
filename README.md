@@ -222,7 +222,7 @@ vue router 4 的 next() 已非必要呼叫，可省略
 改變一個為名叫 `composables` 的組件做 esm module 的封裝
 ```javascript
 // src/composables/use-composables.js
-import esm from './modules';
+import esm from './modules'; // 示意用，不一定要有
 
 export const useComposables = () => {
   return 'Hello world!';
