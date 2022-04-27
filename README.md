@@ -221,5 +221,5 @@ vue router 4 的 next() 已非必要呼叫，可省略
 ## mixins Vue 3 不建議使用
 
 ## css deep selector 的改變
-- `::v-deep(selector) {}` or `:deep(.selector) {}`
+- `::v-deep(selector) {}` or `:deep(.class) {}`
 - ::v-global {}
