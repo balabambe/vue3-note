@@ -219,6 +219,35 @@ vue router 4 的 next() 已非必要呼叫，可省略
 ## Vuex 4.x 可以向下相容 Vue 3.x
 
 ## mixins Vue 3 不建議使用
+改變一個為名叫 `composables` 的組件做 esm module 的封裝
+```javascript
+// src/composables/use-composables.js
+import esm from './modules';
+
+export const useComposables = () => {
+  return 'Hello world!';
+};
+```
+
+```javascript
+// src/views/hello-world.vue
+<template>
+  {{ helloWorld }}
+</template
+<script>
+import { useComposables } from 'src/composables/use-composables.js'
+
+export default {
+  setup() {
+    const helloWorld = useComposables();
+    
+    return {
+      helloWorld,
+    }
+  }
+}
+</script>
+```
 
 ## css deep selector 的改變
 - `::v-deep(selector) {}` or `:deep(selector) {}`
